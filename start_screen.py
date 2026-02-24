@@ -12,7 +12,8 @@ slider_rect = SLIDER_RECT2.copy()
 def draw_titles():
     font = pygame.font.Font(None, GAME_NAME_FONT_SIZE)
     line = font.render(GAME_NAME, True, GAME_NAME_COLOR)
-    rect = pygame.Rect((SCREEN_SIZE[0] - line.get_width()) // 2, 50, *line.get_size())
+    rect = create_rect([SCREEN_SIZE[0] // 2, 0], line.get_size())
+    # rect = pygame.Rect(0, 0, *line.get_size())
     screen.blit(line, rect)
 
     font = pygame.font.Font(None, DIFFICULTY_FONT_SIZE)
@@ -49,7 +50,7 @@ def draw_start_screen(best_score):
     draw_titles()
     draw_play_btn()
     draw_slider()
-    draw_best_score(best_score)
+    # draw_best_score(best_score)  Don't think we need it there 
     pygame.display.flip()
 
 
