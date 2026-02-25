@@ -86,8 +86,14 @@ def get_difficulty():
 def main():
     global slider_is_pressed
     while True:
-        with open('data.json') as f:
-            best_score = json.load(f)
+        try:
+            with open('data.json') as f:
+                best_score = json.load(f)
+        except FileNotFoundError:
+            with open('data.json', 'w') as f:
+                f.write('0')
+            best_score = 0
+                
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 terminate()

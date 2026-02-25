@@ -1,7 +1,7 @@
 import pygame
 NULL_RECT = pygame.rect.Rect(0, 0, 0, 0)
 CLOCK = pygame.time.Clock()
-SCREEN_SIZE = pygame.Vector2(480 * 2, 720)
+SCREEN_SIZE = pygame.Vector2(720, 480)
 FONT_RATIO = 1200 * 720 / SCREEN_SIZE[1]
 KEYBINDS = {119: 'up', 97: 'left', 115: 'down', 100: 'right',
             1073741906: 'up', 1073741904: 'left', 1073741905: 'down', 1073741903: 'right'}
@@ -10,7 +10,7 @@ FPS = 60
 START_BACKGROUND_COLOR = "#131F1F"
 GAME_NAME = '''Dodge the Creeps!'''
 GAME_NAME_COLOR = "#0aacac"
-GAME_NAME_FONT_SIZE = int(FONT_RATIO*0.1)
+GAME_NAME_FONT_SIZE = min(int(90 * SCREEN_SIZE[0] / 720), int(FONT_RATIO*0.1))
 PLAY_BUTTON_TEXT = 'Play'
 PLAY_BUTTON_TEXT_SIZE = 60
 PLAY_BUTTON_TEXT_COLOR = "#AFAFAF"
